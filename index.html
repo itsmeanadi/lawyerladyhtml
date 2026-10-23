@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lawyer Lady — Legal Consultation & Advocate Network</title>
+  <meta name="description" content="Know Your Next Step. Find the Right Legal Connection. Transparent, verified legal consultations across Indian jurisdictions.">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Awwwards Signature Trailing Cursor -->
+  <div class="custom-cursor-follower" id="cursorFollower"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+
+  <!-- Ambient Architectural Light Orbs -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+
+  <!-- ========================================================================
+       TOP PERSISTENT DEMO BAR & QUICK PROTOTYPE SWITCHER
+       ======================================================================== -->
+  <div class="demo-banner" id="demoBanner">
+    <div class="container-wide demo-banner-content">
+      <div style="display:flex; align-items:center; gap:0.65rem;">
+        <span class="demo-pill">
+          <span class="pulse-dot"></span>
+          DEMO MODE
+        </span>
+        <span class="demo-text">
+          Simulated Client Presentation Prototype. All transactions, appointments & lawyer broadcasts are simulated locally.
+        </span>
+      </div>
+
+      <!-- Quick Jump Toolbar for Demo Presenter -->
+      <div class="demo-actions">
+        <span style="font-size:0.72rem; color:var(--gold-300); text-transform:uppercase; font-weight:700;">
+          Presenter Jump:
+        </span>
+        <button class="demo-btn-sm" onclick="App.navigateTo('home')">
+          <i class="fa-solid fa-house"></i> Home
+        </button>
+        <button class="demo-btn-sm" onclick="App.navigateTo('user_flow'); UserFlow.goToStep(1);">
+          <i class="fa-solid fa-user"></i> User Flow (Step 1)
+        </button>
+        <button class="demo-btn-sm" onclick="App.navigateTo('user_flow'); UserFlow.goToStep(6);">
+          <i class="fa-solid fa-credit-card"></i> User Payment (Step 6)
+        </button>
+        <button class="demo-btn-sm" onclick="App.navigateTo('user_flow'); UserFlow.goToStep(7);">
+          <i class="fa-solid fa-gavel"></i> Results (Step 7)
+        </button>
+        <button class="demo-btn-sm" onclick="App.navigateTo('lawyer_flow'); LawyerFlow.goToStep(1);">
+          <i class="fa-solid fa-briefcase"></i> Lawyer Info (Step 1)
+        </button>
+        <button class="demo-btn-sm" onclick="App.navigateTo('lawyer_flow'); LawyerFlow.goToStep(4);">
+          <i class="fa-solid fa-credit-card"></i> Lawyer Payment (Step 4)
+        </button>
+        <button class="demo-btn-sm" onclick="App.navigateTo('lawyer_flow'); LawyerFlow.goToStep(5);">
+          <i class="fa-solid fa-table-columns"></i> Lawyer Dashboard (Step 5)
+        </button>
+        <button class="demo-btn-sm" onclick="App.navigateTo('knowledge_hub')">
+          <i class="fa-solid fa-book-open"></i> Knowledge Hub
+        </button>
+        <button class="demo-btn-sm demo-btn-reset" onclick="App.resetDemo()" title="Reset All Prototype State">
+          <i class="fa-solid fa-rotate-left"></i> Reset Demo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SHARED HEADER NAVIGATION
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container-wide header-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-link" data-target="home">
+        <div class="brand-emblem">
+          <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">THE LAWYER LADY</span>
+          <span class="brand-tagline">Legal Consultation Network</span>
+        </div>
+      </a>
+
+      <!-- Primary Navigation Links -->
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" class="nav-link active" data-target="home">Home</a>
+        <a href="#user_flow" class="nav-link" data-target="user_flow">Find Legal Help</a>
+        <a href="#lawyer_flow" class="nav-link" data-target="lawyer_flow">For Lawyers</a>
+        <a href="#knowledge_hub" class="nav-link" data-target="knowledge_hub">Legal Knowledge</a>
+      </nav>
+
+      <!-- CTA Buttons & Mobile Hamburger -->
+      <div class="header-cta-group">
+        <button class="btn btn-gold btn-sm" onclick="App.navigateTo('user_flow')">
+          <span>Get Connected</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       VIEW 1: HOMEPAGE (Realistic Indian Legal Services Platform)
+       ======================================================================== -->
+  <main id="view_home" class="page-view">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill-badge">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Verified Indian Advocates • Transparent Connection</span>
+          </div>
+          <h1 class="hero-title">
+            Know Your Next Step. <br>
+            <span class="editorial-serif-italic">Find the Right Legal Connection.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Navigate complex Indian legal matters with clarity. State your concern, select your city and legal domain, and request a structured connection with verified practicing advocates for immediate guidance or scheduled chamber appointments.
+          </p>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-primary btn-lg" onclick="App.navigateTo('user_flow')">
+              <span>Find Legal Help</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <button class="btn btn-outline btn-lg" onclick="App.navigateTo('lawyer_flow')">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Join as a Lawyer</span>
+            </button>
+          </div>
+
+          <div class="hero-trust-metrics">
+            <div class="metric-item">
+              <span class="metric-number">18+ Cities</span>
+              <span class="metric-label">High Court & District Benches</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">100% Verified</span>
+              <span class="metric-label">Bar Council Enrolled Advocates</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">₹299</span>
+              <span class="metric-label">Transparent Platform Connection</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">Dual Mode</span>
+              <span class="metric-label">Connect Now or Schedule</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Showcase Card -->
+        <div class="hero-card-preview">
+          <div class="preview-header">
+            <span class="preview-header-badge">
+              <i class="fa-solid fa-check-circle" style="color:#10b981;"></i> Verified Bar Directory
+            </span>
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600; font-family:var(--font-mono);">Active in MP, MH, RJ & DL</span>
+          </div>
+
+          <div class="preview-lawyer-mini">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=350" alt="Advocate" class="lawyer-mini-avatar">
+            <div class="lawyer-mini-info">
+              <h4>Adv. Meera Deshmukh</h4>
+              <p>High Court of MP (Indore Bench) • 14 Yrs Exp</p>
+              <span class="demo-pill" style="font-size:0.65rem; padding:0.1rem 0.4rem; margin-top:0.25rem;">
+                Family Law • Property Injunctions
+              </span>
+            </div>
+          </div>
+
+          <ul class="preview-features-list">
+            <li class="preview-feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Domain-specific questionnaires pinpoint your exact legal issue.</span>
+            </li>
+            <li class="preview-feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Matches solely with advocates in your selected city & jurisdiction.</span>
+            </li>
+            <li class="preview-feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>No spam calls. Direct audio brief or confirmed chamber slot.</span>
+            </li>
+          </ul>
+
+          <button class="btn btn-gold btn-block" onclick="App.navigateTo('user_flow')">
+            <span>Start Your Consultation Brief</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWWWARDS SIGNATURE INFINITE MARQUEE TICKER TAPE -->
+    <div class="awwwards-marquee">
+      <div class="marquee-track">
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> SUPREME COURT OF INDIA</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> HIGH COURT BENCHES (MP, BOMBAY, RAJASTHAN, DELHI)</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> VERIFIED BAR COUNCIL ADVOCATES</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> 100% ETHICAL COMPLIANCE (ADVOCATES ACT 1961)</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> ZERO COMMISSION ON LAWYER FEES</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> RERA & TITLE DUE DILIGENCE</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> BNSS & CRIMINAL BAIL PROTOCOLS</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> MATRIMONIAL & CIVIL INJUNCTIONS</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> SUPREME COURT OF INDIA</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> HIGH COURT BENCHES (MP, BOMBAY, RAJASTHAN, DELHI)</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> VERIFIED BAR COUNCIL ADVOCATES</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> 100% ETHICAL COMPLIANCE (ADVOCATES ACT 1961)</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> ZERO COMMISSION ON LAWYER FEES</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> RERA & TITLE DUE DILIGENCE</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> BNSS & CRIMINAL BAIL PROTOCOLS</span>
+        <span class="marquee-item"><i class="fa-solid fa-circle ticker-bullet"></i> MATRIMONIAL & CIVIL INJUNCTIONS</span>
+      </div>
+    </div>
+
+    <!-- SECTION 1: How the Platform Works -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 01 ARCHITECTURAL WORKFLOW</span>
+          <h2 class="section-title">How The Lawyer Lady Works</h2>
+          <p class="section-subtitle">A transparent 4-stage process designed to eliminate confusion and protect your time.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card">
+            <span class="process-step-num">01</span>
+            <div class="process-icon-box">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h4>1. Select Your Domain</h4>
+            <p>Choose from matrimonial, property disputes, criminal bail, commercial contracts, cyber fraud, or consumer matters.</p>
+          </div>
+
+          <div class="process-card">
+            <span class="process-step-num">02</span>
+            <div class="process-icon-box">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h4>2. Choose Jurisdiction</h4>
+            <p>Select your state and city to view advocates authorized to practice before your local District Courts or High Court Bench.</p>
+          </div>
+
+          <div class="process-card">
+            <span class="process-step-num">03</span>
+            <div class="process-icon-box">
+              <i class="fa-solid fa-sliders"></i>
+            </div>
+            <h4>3. Connect Now or Schedule</h4>
+            <p>Broadcast your brief to available online lawyers for immediate contact, or book a guaranteed chamber consultation slot.</p>
+          </div>
+
+          <div class="process-card">
+            <span class="process-step-num">04</span>
+            <div class="process-icon-box">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h4>4. Consult Confidently</h4>
+            <p>Discuss your brief directly with your advocate. Agree on next procedural steps with full clarity on legal merits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Legal Domains Covered -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 02 LEGAL JURISPRUDENCE & DOMAINS</span>
+          <h2 class="section-title">Legal Domains Covered</h2>
+          <p class="section-subtitle">Select any domain below to begin an intelligent consultation brief tailored to your concern.</p>
+        </div>
+
+        <div class="grid-4" id="homeDomainCardsGrid">
+          <!-- Populated from APP_DATA.domains via JS -->
+          <div class="domain-card" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('family'); UserFlow.goToStep(1);">
+            <div class="domain-card-top">
+              <span class="domain-badge">High Demand</span>
+              <div class="domain-icon-wrapper"><i class="fa-solid fa-heart-circle-bolt"></i></div>
+              <h4>Family & Relationships</h4>
+              <p>Mutual divorce, child custody, maintenance, domestic violence act protection, restitution.</p>
+            </div>
+            <div class="domain-card-action"><span>Find Family Lawyer</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="domain-card" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('property'); UserFlow.goToStep(1);">
+            <div class="domain-card-top">
+              <span class="domain-badge">Civil Practice</span>
+              <div class="domain-icon-wrapper"><i class="fa-solid fa-building-shield"></i></div>
+              <h4>Property & Civil Disputes</h4>
+              <p>Title search, RERA possession delay, partition suits, boundary encroachment, eviction.</p>
+            </div>
+            <div class="domain-card-action"><span>Find Property Lawyer</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="domain-card" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('criminal'); UserFlow.goToStep(1);">
+            <div class="domain-card-top">
+              <span class="domain-badge">Urgent Relief</span>
+              <div class="domain-icon-wrapper"><i class="fa-solid fa-gavel"></i></div>
+              <h4>Criminal Law</h4>
+              <p>Anticipatory bail, regular bail, FIR quashing under BNSS, cheque bounce Sec 138 defense.</p>
+            </div>
+            <div class="domain-card-action"><span>Find Criminal Defense</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="domain-card" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('business'); UserFlow.goToStep(1);">
+            <div class="domain-card-top">
+              <span class="domain-badge">Corporate</span>
+              <div class="domain-icon-wrapper"><i class="fa-solid fa-briefcase"></i></div>
+              <h4>Business & Contracts</h4>
+              <p>Commercial contract drafting, vendor recovery, partnership agreements, startup compliance.</p>
+            </div>
+            <div class="domain-card-action"><span>Find Corporate Counsel</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="domain-card" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('consumer'); UserFlow.goToStep(1);">
+            <div class="domain-card-top">
+              <span class="domain-badge">Consumer Forum</span>
+              <div class="domain-icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+              <h4>Consumer Issues</h4>
+              <p>Defective goods, insurance claim repudiation, medical negligence, unfair trade practices.</p>
+            </div>
+            <div class="domain-card-action"><span>Find Consumer Advocate</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="domain-card" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('cybercrime'); UserFlow.goToStep(1);">
+            <div class="domain-card-top">
+              <span class="domain-badge">Tech & Cyber</span>
+              <div class="domain-icon-wrapper"><i class="fa-solid fa-network-wired"></i></div>
+              <h4>Cybercrime</h4>
+              <p>Online financial fraud, identity theft, unauthorized data breaches, digital harassment.</p>
+            </div>
+            <div class="domain-card-action"><span>Find Cyber Legal Expert</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="domain-card" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('employment'); UserFlow.goToStep(1);">
+            <div class="domain-card-top">
+              <span class="domain-badge">Workplace</span>
+              <div class="domain-icon-wrapper"><i class="fa-solid fa-users-gear"></i></div>
+              <h4>Employment & Labour</h4>
+              <p>Wrongful termination, unpaid severance & gratuity, non-compete enforceability, POSH.</p>
+            </div>
+            <div class="domain-card-action"><span>Find Labour Counsel</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="domain-card" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('other'); UserFlow.goToStep(1);">
+            <div class="domain-card-top">
+              <span class="domain-badge">General Practice</span>
+              <div class="domain-icon-wrapper"><i class="fa-solid fa-scale-balanced"></i></div>
+              <h4>Other Legal Issues</h4>
+              <p>Constitutional writs, intellectual property, statutory legal notices, revenue appeals.</p>
+            </div>
+            <div class="domain-card-action"><span>Consult General Practice</span> <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Why Users Choose Guided Legal Connection -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 03 PRINCIPLES OF INTEGRITY & PRECISION</span>
+          <h2 class="section-title">Why Choose a Guided Legal-Connection Process?</h2>
+          <p class="section-subtitle">Traditional legal searches leave users vulnerable to predatory retainers, unqualified touts, and jurisdiction mismatches.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="feature-box">
+            <div class="feature-box-icon"><i class="fa-solid fa-compass"></i></div>
+            <h4>Jurisdiction Accuracy</h4>
+            <p>Legal remedies are strictly bound by territorial jurisdiction. The Lawyer Lady matches you solely with advocates authorized to appear in your city's courts, avoiding wasted consultations.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon"><i class="fa-solid fa-id-card-clip"></i></div>
+            <h4>Bar Council Verification</h4>
+            <p>Every advocate on the platform has their State Bar Council enrolment standing reviewed. You receive genuine legal counsel from practicing courtroom professionals.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <h4>Zero Commission Distortion</h4>
+            <p>We do not take a percentage of lawyer litigation fees. You pay a nominal platform connection fee (₹299 demo), ensuring independent, unbiased legal advisory.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: How Lawyer Matching Works -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 04 DUAL ROUTING PROTOCOL</span>
+          <h2>How Lawyer Matching Works</h2>
+          <p>Dual consultation paths built to respect both urgent legal distress and in-depth litigation planning.</p>
+        </div>
+
+        <div class="grid-2">
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-xl); padding:2.5rem;">
+            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--gold-500); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.1rem;">
+                <i class="fa-solid fa-tower-broadcast"></i>
+              </div>
+              <h3 style="font-size:1.4rem;">Mode 1: Connect Now</h3>
+            </div>
+            <p style="margin-bottom:1.5rem; line-height:1.6;">
+              When urgent matters arise — such as police station summons, emergency bail petitions, or same-day statutory notice replies — our system broadcasts your encrypted brief to verified advocates online in your jurisdiction. The first valid acceptance establishes a secure audio connection.
+            </p>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:0.875rem;">
+              <li style="display:flex; align-items:center; gap:0.5rem;"><i class="fa-solid fa-check" style="color:var(--gold-400);"></i> Immediate response within minutes</li>
+              <li style="display:flex; align-items:center; gap:0.5rem;"><i class="fa-solid fa-check" style="color:var(--gold-400);"></i> Live availability verification</li>
+              <li style="display:flex; align-items:center; gap:0.5rem;"><i class="fa-solid fa-check" style="color:var(--gold-400);"></i> Fallback to scheduled appointments if lawyers are in court</li>
+            </ul>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-xl); padding:2.5rem;">
+            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--gold-500); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.1rem;">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <h3 style="font-size:1.4rem;">Mode 2: Schedule for Later</h3>
+            </div>
+            <p style="margin-bottom:1.5rem; line-height:1.6;">
+              Ideal for thorough property document due diligence, corporate contracts, and planned family settlements. Browse verified advocate credentials, choose an available date and time slot, and receive a confirmed appointment pass for chamber or video consultation.
+            </p>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem; font-size:0.875rem;">
+              <li style="display:flex; align-items:center; gap:0.5rem;"><i class="fa-solid fa-check" style="color:var(--gold-400);"></i> Choose your specific preferred advocate</li>
+              <li style="display:flex; align-items:center; gap:0.5rem;"><i class="fa-solid fa-check" style="color:var(--gold-400);"></i> Reserved chamber time slots with verified venue address</li>
+              <li style="display:flex; align-items:center; gap:0.5rem;"><i class="fa-solid fa-check" style="color:var(--gold-400);"></i> Automated reschedule and confirmation protections</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Featured Sample Lawyer Profiles -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 05 VERIFIED ADVOCATES DIRECTORY</span>
+          <h2 class="section-title">Featured Legal Practitioners</h2>
+          <p class="section-subtitle">A glimpse of practicing advocates registered across Madhya Pradesh, Maharashtra, Rajasthan, and Delhi.</p>
+        </div>
+
+        <div class="grid-4" id="featuredLawyersGrid">
+          <!-- Populated by App.initFeaturedLawyersOnHome() -->
+        </div>
+
+        <div style="text-align:center; margin-top:2.5rem;">
+          <button class="btn btn-outline" onclick="App.navigateTo('user_flow')">
+            <span>Explore All Advocates Across 18 Jurisdictions</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Legal Knowledge Hub Previews -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 06 LEGAL INTELLIGENCE HUB</span>
+          <h2 class="section-title">Legal Knowledge Hub Previews</h2>
+          <p class="section-subtitle">Demystifying procedural steps, statutory remedies, and essential questions to ask your advocate.</p>
+        </div>
+
+        <div class="grid-3" id="homeKnowledgeGrid">
+          <!-- Populated by App.initKnowledgePreviewsOnHome() -->
+        </div>
+
+        <div style="text-align:center; margin-top:2.5rem;">
+          <button class="btn btn-primary" onclick="App.navigateTo('knowledge_hub')">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Browse All Legal Articles & Guides</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Separate Calls to Action for Users and Lawyers -->
+    <section class="section">
+      <div class="container">
+        <div class="dual-banner-grid">
+          <!-- User CTA Card -->
+          <div class="dual-banner-card client-side">
+            <div>
+              <span class="domain-badge" style="background:#fff;">For Citizens & Enterprises</span>
+              <h3 style="font-size:1.85rem; margin:0.75rem 0 0.5rem;">Need Legal Guidance Today?</h3>
+              <p style="margin-bottom:2rem;">
+                Don't make critical decisions in the dark. State your situation in our structured questionnaire, select your city, and connect with a verified advocate.
+              </p>
+            </div>
+            <button class="btn btn-primary btn-lg" onclick="App.navigateTo('user_flow')">
+              <span>Start Your Request Now</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Lawyer CTA Card -->
+          <div class="dual-banner-card lawyer-side">
+            <div>
+              <span class="demo-pill" style="background:rgba(201,164,86,0.2); border-color:var(--gold-400);">For Practicing Advocates</span>
+              <h3 style="font-size:1.85rem; margin:0.75rem 0 0.5rem; color:#fff;">Join Our Curated Network</h3>
+              <p style="margin-bottom:2rem; color:#cbd5e1;">
+                Showcase your specialized practice areas, manage your consultation schedule, and receive matched client connection requests in your jurisdiction.
+              </p>
+            </div>
+            <button class="btn btn-gold btn-lg" onclick="App.navigateTo('lawyer_flow')">
+              <span>Register & View Membership</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Trust, Privacy, and Transparency Section -->
+    <section class="section section-alt">
+      <div class="container-narrow text-center" style="text-align:center;">
+        <div style="width:60px; height:60px; border-radius:50%; background:rgba(212,175,55,0.12); color:var(--gold-400); display:flex; align-items:center; justify-content:center; font-size:1.6rem; margin:0 auto 1.25rem; border:1px solid rgba(212,175,55,0.35);">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <span class="section-eyebrow">// 08 STATUTORY INTEGRITY & ETHICAL TRANSPARENCY</span>
+        <h2 style="font-size:2rem; margin-bottom:1rem; margin-top:0.5rem;">Commitment to Legal Ethics & Transparency</h2>
+        <p style="font-size:1rem; line-height:1.75; color:#94a3b8; margin-bottom:1.75rem;">
+          The Lawyer Lady operates strictly within the framework of the <strong>Advocates Act, 1961</strong> and Bar Council of India regulations. We are a technology-enabled legal consultation connection service, not a law firm. We do not solicit clients, split advocate fees, or guarantee case outcomes. Our connection fee covers identity verification, domain triage, and communication software infrastructure.
+        </p>
+        <div style="display:inline-flex; align-items:center; gap:1.75rem; flex-wrap:wrap; justify-content:center; font-size:0.875rem; font-weight:600; color:#e2e8f0; font-family:var(--font-mono);">
+          <span><i class="fa-solid fa-shield-halved" style="color:var(--gold-400);"></i> 100% Confidential</span>
+          <span><i class="fa-solid fa-lock" style="color:var(--gold-400);"></i> Encrypted Case Briefs</span>
+          <span><i class="fa-solid fa-ban" style="color:var(--gold-400);"></i> Zero Hidden Retainers</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       VIEW 2: USER POV — COMPLETE 7-STEP CONSULTATION FLOW
+       ======================================================================== -->
+  <main id="view_user_flow" class="page-view flow-view">
+    <div class="container">
+      <!-- Flow Header -->
+      <div class="flow-header-wrapper">
+        <span class="demo-pill" style="margin-bottom:0.5rem;">USER EXPERIENCE DEMONSTRATION</span>
+        <h2>Find the Right Legal Connection</h2>
+        <p>Complete this guided intake to specify your legal issue, jurisdiction, and consultation preferences.</p>
+      </div>
+
+      <!-- 7-Step Stepper Progress Bar -->
+      <div class="stepper-progress" id="userStepper">
+        <div class="stepper-step active" onclick="UserFlow.goToStep(1)">
+          <div class="step-circle">1</div>
+          <span class="step-label">Domain</span>
+        </div>
+        <div class="stepper-step" onclick="UserFlow.goToStep(2)">
+          <div class="step-circle">2</div>
+          <span class="step-label">Location</span>
+        </div>
+        <div class="stepper-step" onclick="UserFlow.goToStep(3)">
+          <div class="step-circle">3</div>
+          <span class="step-label">Mode</span>
+        </div>
+        <div class="stepper-step" onclick="UserFlow.goToStep(4)">
+          <div class="step-circle">4</div>
+          <span class="step-label">Questions</span>
+        </div>
+        <div class="stepper-step" onclick="UserFlow.goToStep(5)">
+          <div class="step-circle">5</div>
+          <span class="step-label">Review</span>
+        </div>
+        <div class="stepper-step" onclick="UserFlow.goToStep(6)">
+          <div class="step-circle">6</div>
+          <span class="step-label">Payment</span>
+        </div>
+        <div class="stepper-step" onclick="UserFlow.goToStep(7)">
+          <div class="step-circle">7</div>
+          <span class="step-label">Matching</span>
+        </div>
+      </div>
+
+      <!-- Main Wizard Layout (Left: Steps / Right: Summary Sidebar) -->
+      <div class="wizard-layout-grid">
+        <div class="wizard-card" id="userWizardPanes">
+          
+          <!-- STEP 1: Select Legal Domain -->
+          <div class="wizard-step-pane active-step" id="userStep1">
+            <h3 style="margin-bottom:0.5rem;">Step 1: Select Your Legal Issue</h3>
+            <p style="margin-bottom:1.75rem;">Question 1: What kind of legal issue are you facing?</p>
+
+            <div class="grid-2" id="domainCardsContainer">
+              <!-- Populated by UserFlow.renderDomainCards() -->
+            </div>
+
+            <div class="wizard-actions-bar">
+              <span style="font-size:0.85rem; color:var(--text-muted);">Step 1 of 7</span>
+              <button class="btn btn-primary" onclick="UserFlow.nextStep()">
+                <span>Continue to Location</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Location (State & Dependent City) -->
+          <div class="wizard-step-pane" id="userStep2">
+            <h3 style="margin-bottom:0.5rem;">Step 2: Legal Assistance Location</h3>
+            <p style="margin-bottom:1.75rem;">Question 2: Where do you need legal assistance?</p>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label" for="userStateSelect">
+                  State <span class="required">*</span>
+                </label>
+                <select class="form-control" id="userStateSelect">
+                  <!-- Populated dynamically -->
+                </select>
+                <span class="form-help">Select the state having jurisdiction over the issue.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="userCitySelect">
+                  City / District <span class="required">*</span>
+                </label>
+                <select class="form-control" id="userCitySelect">
+                  <!-- Populated dynamically based on state -->
+                </select>
+                <span class="form-help">Only advocates serving this city will be matched.</span>
+              </div>
+            </div>
+
+            <div style="background:var(--ivory-base); border:1px solid var(--border-medium); border-radius:var(--radius-md); padding:1rem; margin-top:1rem; font-size:0.825rem; color:var(--navy-900);">
+              <i class="fa-solid fa-shield-halved" style="color:var(--gold-600); margin-right:0.35rem;"></i>
+              <strong>Jurisdiction Rule:</strong> In strict compliance with Indian civil and criminal procedural codes, lawyers will be filtered only from your designated city and territorial High Court bench.
+            </div>
+
+            <div class="wizard-actions-bar">
+              <button class="btn btn-outline" onclick="UserFlow.prevStep()">
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+              <button class="btn btn-primary" onclick="UserFlow.nextStep()">
+                <span>Continue to Consultation Mode</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Consultation Mode -->
+          <div class="wizard-step-pane" id="userStep3">
+            <h3 style="margin-bottom:0.5rem;">Step 3: Consultation Mode</h3>
+            <p style="margin-bottom:1.75rem;">Question 3: When would you like to connect with an advocate?</p>
+
+            <div class="radio-cards-grid" id="consultationModeCards">
+              <!-- Populated by UserFlow.renderConsultationModes() -->
+            </div>
+
+            <div class="wizard-actions-bar">
+              <button class="btn btn-outline" onclick="UserFlow.prevStep()">
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+              <button class="btn btn-primary" onclick="UserFlow.nextStep()">
+                <span>Continue to Questionnaire</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Dynamic Questionnaire & Write Your Problem -->
+          <div class="wizard-step-pane" id="userStep4">
+            <h3 style="margin-bottom:0.5rem;">Step 4: Dynamic Case Intake Questionnaire</h3>
+            <p style="margin-bottom:1.75rem;">Answer these 3 tailored questions to help the advocate understand your situation.</p>
+
+            <!-- Adaptive Questions rendered by UserFlow.renderDynamicQuestions() -->
+            <div id="dynamicQuestionsWrapper"></div>
+
+            <!-- "Write Your Problem" Textarea -->
+            <div class="form-group" style="margin-top:2rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.45rem;">
+                <label class="form-label" style="font-size:1rem; margin-bottom:0;" for="userProblemText">
+                  Write Your Problem <span class="required">*</span>
+                </label>
+                <span style="font-size:0.75rem; color:var(--text-muted);" id="problemCharCount">0 / 500 characters</span>
+              </div>
+              <textarea class="form-control" id="userProblemText" rows="4" placeholder="Briefly describe your situation and what kind of legal help you are looking for."></textarea>
+              
+              <!-- Privacy notice -->
+              <div style="background:var(--gold-100); border:1px solid var(--border-gold); border-radius:var(--radius-sm); padding:0.65rem 0.85rem; font-size:0.78rem; color:var(--gold-600); margin-top:0.5rem;">
+                <i class="fa-solid fa-lock" style="margin-right:0.35rem;"></i>
+                <strong>Privacy Notice:</strong> Please do not enter unnecessarily sensitive personal identifiers, bank PINs, or confidential credentials in this demo.
+              </div>
+            </div>
+
+            <div class="wizard-actions-bar">
+              <button class="btn btn-outline" onclick="UserFlow.prevStep()">
+                <i class="fa-solid fa-arrow-left"></i> Back
+              </button>
+              <button class="btn btn-primary" onclick="UserFlow.nextStep()">
+                <span>Review Your Request</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 5: Review the Request -->
+          <div class="wizard-step-pane" id="userStep5">
+            <h3 style="margin-bottom:0.5rem;">Step 5: Review Your Consultation Request</h3>
+            <p style="margin-bottom:1.75rem;">Verify your inputs and understand what happens once you request a connection.</p>
+
+            <div id="step5ReviewContainer">
+              <!-- Rendered by UserFlow.renderStep5Review() -->
+            </div>
+
+            <div class="wizard-actions-bar">
+              <button class="btn btn-outline" onclick="UserFlow.prevStep()">
+                <i class="fa-solid fa-arrow-left"></i> Back & Edit
+              </button>
+              <button class="btn btn-primary" onclick="UserFlow.nextStep()">
+                <span>Proceed to Simulated Payment</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 6: Simulated Payment Checkout (MANDATORY DONE / NOT DONE) -->
+          <div class="wizard-step-pane" id="userStep6">
+            <h3 style="margin-bottom:0.5rem;">Step 6: Simulated Payment Checkout</h3>
+            <p style="margin-bottom:1.5rem;">Complete the platform connection fee transaction to unlock matching advocates.</p>
+
+            <div id="step6PaymentContainer">
+              <!-- Rendered dynamically by UserFlow.renderStep6Payment() -->
+            </div>
+
+            <div class="wizard-actions-bar">
+              <button class="btn btn-outline" onclick="UserFlow.prevStep()">
+                <i class="fa-solid fa-arrow-left"></i> Back to Review
+              </button>
+              <span style="font-size:0.8rem; color:var(--text-muted);">
+                Use the mandatory buttons above to demonstrate success or failure
+              </span>
+            </div>
+          </div>
+
+          <!-- STEP 7: Lawyer Matching Results (Filtered strictly by Domain & City) -->
+          <div class="wizard-step-pane" id="userStep7">
+            <h3 style="margin-bottom:0.5rem;">Step 7: Lawyer Matching Results</h3>
+            <p style="margin-bottom:1.5rem;">Direct advocate results in your chosen jurisdiction.</p>
+
+            <div id="step7MatchingContainer">
+              <!-- Rendered dynamically by UserFlow.renderStep7Matching() -->
+            </div>
+
+            <div class="wizard-actions-bar">
+              <button class="btn btn-outline" onclick="UserFlow.goToStep(6)">
+                <i class="fa-solid fa-rotate-left"></i> Back to Payment Simulation
+              </button>
+              <button class="btn btn-primary" onclick="App.navigateTo('home')">
+                <i class="fa-solid fa-house"></i> Return to Homepage
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Persistent Summary Sidebar -->
+        <aside class="summary-sidebar">
+          <div class="summary-sidebar-header">
+            <h4>Request Summary</h4>
+            <span class="demo-pill" style="font-size:0.65rem;">Live</span>
+          </div>
+
+          <div class="summary-items-list">
+            <div class="summary-item">
+              <span class="summary-item-label">Legal Domain:</span>
+              <span class="summary-item-value" id="summaryDomain">Family & Relationships</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Location:</span>
+              <span class="summary-item-value" id="summaryLocation">Indore, Madhya Pradesh</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Consultation Mode:</span>
+              <span class="summary-item-value" id="summaryMode">Connect Now</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Payment Status:</span>
+              <span class="summary-item-value" id="summaryPaymentStatus">
+                <span style="color:var(--text-muted);"><i class="fa-solid fa-hourglass"></i> Pending</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="summary-pricing-box">
+            <div class="summary-pricing-row">
+              <span>Matching & Verification:</span>
+              <span id="summaryFee">₹299</span>
+            </div>
+            <div class="summary-pricing-row">
+              <span>Jurisdiction Filter:</span>
+              <span>Included</span>
+            </div>
+            <div class="summary-pricing-total summary-pricing-row">
+              <span>Total Connection Fee:</span>
+              <span id="summaryTotalFee">₹299</span>
+            </div>
+            <p class="summary-fee-note">
+              * Illustrative demo fee. Paid to platform; does not include advocate courtroom retainer.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       VIEW 3: LAWYER POV — REGISTRATION, MEMBERSHIP & DASHBOARD PREVIEW
+       ======================================================================== -->
+  <main id="view_lawyer_flow" class="page-view flow-view">
+    <div class="container">
+      <div class="flow-header-wrapper">
+        <span class="demo-pill" style="margin-bottom:0.5rem;">LAWYER EXPERIENCE DEMONSTRATION</span>
+        <h2>Advocate Onboarding & Membership</h2>
+        <p>Join India's curated lawyer connection network. Establish your digital chamber and receive matched client inquiries.</p>
+      </div>
+
+      <!-- 5-Step Stepper Progress Bar -->
+      <div class="stepper-progress" id="lawyerStepper" style="max-width:680px;">
+        <div class="stepper-step active" onclick="LawyerFlow.goToStep(1)">
+          <div class="step-circle">1</div>
+          <span class="step-label">Account</span>
+        </div>
+        <div class="stepper-step" onclick="LawyerFlow.goToStep(2)">
+          <div class="step-circle">2</div>
+          <span class="step-label">Profile</span>
+        </div>
+        <div class="stepper-step" onclick="LawyerFlow.goToStep(3)">
+          <div class="step-circle">3</div>
+          <span class="step-label">Review</span>
+        </div>
+        <div class="stepper-step" onclick="LawyerFlow.goToStep(4)">
+          <div class="step-circle">4</div>
+          <span class="step-label">Membership</span>
+        </div>
+        <div class="stepper-step" onclick="LawyerFlow.goToStep(5)">
+          <div class="step-circle">5</div>
+          <span class="step-label">Dashboard</span>
+        </div>
+      </div>
+
+      <div class="wizard-layout-full">
+        <div class="wizard-card" id="lawyerWizardPanes">
+
+          <!-- LAWYER STEP 1: Create Account -->
+          <div class="wizard-step-pane active-step" id="lawyerStep1">
+            <h3 style="margin-bottom:0.5rem;">Step 1: Create Advocate Account</h3>
+            <p style="margin-bottom:1.75rem;">Provide your professional registration and contact coordinates.</p>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label" for="lawyerFullName">
+                  Full Name (with Prefix) <span class="required">*</span>
+                </label>
+                <input type="text" class="form-control" id="lawyerFullName" placeholder="e.g. Adv. Aniruddh Vaidya">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="lawyerEmail">
+                  Professional Email <span class="required">*</span>
+                </label>
+                <input type="email" class="form-control" id="lawyerEmail" placeholder="e.g. counsel@chamber.in">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="lawyerPhone">
+                  Mobile Number <span class="required">*</span>
+                  <span class="helper-badge">Demo - No Real OTP</span>
+                </label>
+                <input type="text" class="form-control" id="lawyerPhone" placeholder="+91 98260 41529">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="lawyerStateSelect">
+                  Primary Practice State <span class="required">*</span>
+                </label>
+                <select class="form-control" id="lawyerStateSelect">
+                  <!-- Populated dynamically -->
+                </select>
+              </div>
+
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label class="form-label" for="lawyerCitySelect">
+                  Primary Practice City / Bench <span class="required">*</span>
+                </label>
+                <select class="form-control" id="lawyerCitySelect">
+                  <!-- Populated dynamically -->
+                </select>
+              </div>
+            </div>
+
+            <div class="wizard-actions-bar">
+              <span style="font-size:0.85rem; color:var(--text-muted);">Step 1 of 5</span>
+              <button class="btn btn-primary" onclick="LawyerFlow.goToStep(2)">
+                <span>Continue to Professional Profile</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- LAWYER STEP 2: Professional Profile & Legal Niches -->
+          <div class="wizard-step-pane" id="lawyerStep2">
+            <h3 style="margin-bottom:0.5rem;">Step 2: Professional Profile & Legal Niches</h3>
+            <p style="margin-bottom:1.75rem;">Define your litigation experience, courtroom admissions, and specialized practice domains.</p>
+
+            <div class="form-group">
+              <label class="form-label" for="lawyerBio">
+                Professional Introduction & Court Practice Summary <span class="required">*</span>
+              </label>
+              <textarea class="form-control" id="lawyerBio" rows="3" placeholder="Summarize your courtroom experience, specialized jurisprudence, and judicial achievements."></textarea>
+            </div>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label" for="lawyerExperience">
+                  Years of Active Litigation Experience <span class="required">*</span>
+                </label>
+                <input type="number" class="form-control" id="lawyerExperience" min="1" max="50" value="12">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="lawyerBarCouncil">
+                  Bar Council Enrolment Number <span class="required">*</span>
+                  <span class="helper-badge">Demo Only</span>
+                </label>
+                <input type="text" class="form-control" id="lawyerBarCouncil" placeholder="e.g. MP/2418/2014 (Demo)">
+                <span class="form-help">Subject to digital credential verification before profile activation.</span>
+              </div>
+            </div>
+
+            <!-- Multi-Select Legal Niches -->
+            <div class="form-group" style="margin-top:1rem;">
+              <label class="form-label">
+                Select Your Legal Practice Niches (Multiple Selection) <span class="required">*</span>
+              </label>
+              <div class="slot-chips-wrap" id="lawyerNichesContainer">
+                <!-- Populated dynamically by LawyerFlow.renderNichesSelection() -->
+              </div>
+              <span class="form-help">Client consultation briefs will be routed strictly to advocates with matching niches.</span>
+            </div>
+
+            <div class="wizard-actions-bar">
+              <button class="btn btn-outline" onclick="LawyerFlow.goToStep(1)">
+                <i class="fa-solid fa-arrow-left"></i> Back to Account
+              </button>
+              <button class="btn btn-primary" onclick="LawyerFlow.goToStep(3)">
+                <span>Review Your Profile</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- LAWYER STEP 3: Profile Review & Verification Preview -->
+          <div class="wizard-step-pane" id="lawyerStep3">
+            <h3 style="margin-bottom:0.5rem;">Step 3: Review Profile & Verification Preview</h3>
+            <p style="margin-bottom:1.75rem;">Check how your profile will appear to clients before proceeding to membership activation.</p>
+
+            <div id="lawyerReviewContainer">
+              <!-- Rendered by LawyerFlow.renderStep3Review() -->
+            </div>
+          </div>
+
+          <!-- LAWYER STEP 4: Annual Practice Membership & Payment -->
+          <div class="wizard-step-pane" id="lawyerStep4">
+            <h3 style="margin-bottom:0.5rem;">Step 4: Annual Practice Membership</h3>
+            <p style="margin-bottom:1.5rem;">Activate your verified profile and directory listing via annual membership.</p>
+
+            <div id="lawyerMembershipContainer">
+              <!-- Rendered by LawyerFlow.renderStep4Membership() -->
+            </div>
+
+            <div class="wizard-actions-bar">
+              <button class="btn btn-outline" onclick="LawyerFlow.goToStep(3)">
+                <i class="fa-solid fa-arrow-left"></i> Back to Profile Review
+              </button>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Use the mandatory buttons above</span>
+            </div>
+          </div>
+
+          <!-- LAWYER STEP 5: Lawyer Dashboard Preview -->
+          <div class="wizard-step-pane" id="lawyerStep5">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
+              <div>
+                <h3 style="margin-bottom:0.2rem;">Step 5: Advocate Dashboard Preview</h3>
+                <p style="font-size:0.875rem; color:var(--text-secondary);">Your personal chamber management control panel.</p>
+              </div>
+              <span class="demo-pill" style="background:#d1fae5; color:#065f46; border-color:#6ee7b7;">
+                <i class="fa-solid fa-circle-check"></i> Standard Annual Membership Active
+              </span>
+            </div>
+
+            <div id="lawyerDashboardContainer">
+              <!-- Rendered by LawyerFlow.renderStep5Dashboard() -->
+            </div>
+
+            <div class="wizard-actions-bar">
+              <button class="btn btn-outline" onclick="LawyerFlow.goToStep(4)">
+                <i class="fa-solid fa-arrow-left"></i> Back to Membership
+              </button>
+              <button class="btn btn-primary" onclick="App.navigateTo('home')">
+                <i class="fa-solid fa-house"></i> Return to Homepage
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       VIEW 4: LEGAL KNOWLEDGE HUB
+       ======================================================================== -->
+  <main id="view_knowledge_hub" class="page-view flow-view">
+    <div class="container">
+      <div class="flow-header-wrapper">
+        <span class="demo-pill" style="margin-bottom:0.5rem;">LEGAL LITERACY & EDUCATIONAL HUB</span>
+        <h2>Legal Knowledge Hub</h2>
+        <p>Curated legal roadmaps, procedural frameworks under Indian statutes, and 5 essential questions to ask your advocate.</p>
+      </div>
+
+      <!-- Filter Bar with Category Pills & Search Input -->
+      <div class="knowledge-filter-bar">
+        <div class="category-pills-list" id="knowledgeCategoriesWrap">
+          <!-- Populated by KnowledgeHub.renderCategoryPills() -->
+        </div>
+
+        <div style="min-width:280px; position:relative;">
+          <input type="text" id="knowledgeSearchInput" class="form-control" placeholder="Search guides, sections, or topics..." style="padding-left:2.5rem; font-size:0.875rem;">
+          <i class="fa-solid fa-magnifying-glass" style="position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:0.9rem;"></i>
+        </div>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="grid-3" id="knowledgeArticlesGrid">
+        <!-- Populated by KnowledgeHub.renderArticlesGrid() -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       MODAL DIALOGS
+       ======================================================================== -->
+
+  <!-- 1. Full Article Reader Modal -->
+  <div class="modal-overlay" id="articleReaderModal">
+    <div class="modal-dialog modal-dialog-large">
+      <div class="modal-header">
+        <h3 id="articleModalTitle">Legal Guide</h3>
+        <button class="modal-close-btn" onclick="App.closeModal('articleReaderModal')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="articleModalBody">
+        <!-- Content injected by KnowledgeHub.openArticleModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Lawyer Profile Details Modal -->
+  <div class="modal-overlay" id="lawyerDetailsModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Advocate Professional Profile</h3>
+        <button class="modal-close-btn" onclick="App.closeModal('lawyerDetailsModal')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="lawyerModalBody">
+        <!-- Content injected by App.showLawyerModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Simulated Audio Call Session Modal (Connect Now) -->
+  <div class="modal-overlay" id="simulatedCallModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Secure Audio Consultation (Simulated)</h3>
+        <button class="modal-close-btn" onclick="App.closeModal('simulatedCallModal')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="simulatedCallBody">
+        <!-- Content injected by App.showSimulatedCallModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Simulated Appointment Pass Modal (Schedule for Later) -->
+  <div class="modal-overlay" id="simulatedPassModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Confirmed Appointment Pass (Demo)</h3>
+        <button class="modal-close-btn" onclick="App.closeModal('simulatedPassModal')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="simulatedPassBody">
+        <!-- Content injected by App.showSimulatedPassModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Help Me Decide Modal -->
+  <div class="modal-overlay" id="helpDecideModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Consultation Mode Comparison</h3>
+        <button class="modal-close-btn" onclick="App.closeModal('helpDecideModal')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom:1.5rem; color:var(--text-secondary); font-size:0.95rem;">
+          Choose the connection method that best fits your immediate legal situation:
+        </p>
+
+        <div class="grid-2" style="margin-bottom:1.5rem;">
+          <div style="background:var(--ivory-base); border:1.5px solid var(--border-medium); border-radius:var(--radius-lg); padding:1.25rem;">
+            <div style="font-weight:700; color:var(--navy-900); font-size:1.05rem; margin-bottom:0.35rem;">
+              <i class="fa-solid fa-bolt" style="color:var(--gold-500); margin-right:0.35rem;"></i>
+              Connect Now
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+              Best for time-sensitive matters where an immediate advocate voice response is vital.
+            </p>
+            <ul style="list-style:none; font-size:0.8rem; display:flex; flex-direction:column; gap:0.4rem; color:var(--navy-900);">
+              <li>• Urgent police summons or inquiry</li>
+              <li>• Anticipatory bail emergency</li>
+              <li>• 24-hr statutory reply deadline</li>
+              <li>• Instant brief to available lawyers</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--ivory-base); border:1.5px solid var(--border-medium); border-radius:var(--radius-lg); padding:1.25rem;">
+            <div style="font-weight:700; color:var(--navy-900); font-size:1.05rem; margin-bottom:0.35rem;">
+              <i class="fa-solid fa-calendar-check" style="color:var(--gold-500); margin-right:0.35rem;"></i>
+              Schedule for Later
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+              Best when you have complex paperwork that requires advance scrutiny in chambers.
+            </p>
+            <ul style="list-style:none; font-size:0.8rem; display:flex; flex-direction:column; gap:0.4rem; color:var(--navy-900);">
+              <li>• Title due diligence & property papers</li>
+              <li>• Mutual divorce agreement terms</li>
+              <li>• Corporate contract drafting</li>
+              <li>• Choose specific advocate & time slot</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:0.75rem;">
+          <button class="btn btn-outline" onclick="App.closeModal('helpDecideModal')">Close</button>
+          <button class="btn btn-primary" onclick="UserFlow.state.consultationMode = 'connect_now'; UserFlow.renderConsultationModes(); App.closeModal('helpDecideModal');">
+            Choose Connect Now
+          </button>
+          <button class="btn btn-gold" onclick="UserFlow.state.consultationMode = 'schedule'; UserFlow.renderConsultationModes(); App.closeModal('helpDecideModal');">
+            Choose Schedule for Later
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ========================================================================
+       PROFESSIONAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+          <div class="brand-emblem" style="width:36px; height:36px; font-size:1.1rem;">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <span class="brand-name" style="color:#fff; font-size:1.2rem;">THE LAWYER LADY</span>
+        </div>
+        <p style="font-size:0.875rem; line-height:1.6; color:#94a3b8; margin-bottom:1.25rem;">
+          A transparent Indian legal consultation and advocate-connection platform inspired by the combined business concepts of Vakilo and PathLegal. Connecting citizens with verified legal professionals.
+        </p>
+        <span class="demo-pill" style="font-size:0.7rem;">Interactive Client Prototype</span>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#home" class="footer-link" onclick="App.navigateTo('home')">Home</a></li>
+          <li><a href="#user_flow" class="footer-link" onclick="App.navigateTo('user_flow')">Find Legal Help</a></li>
+          <li><a href="#lawyer_flow" class="footer-link" onclick="App.navigateTo('lawyer_flow')">For Lawyers (Registration)</a></li>
+          <li><a href="#knowledge_hub" class="footer-link" onclick="App.navigateTo('knowledge_hub')">Legal Knowledge Hub</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Practice Domains</h4>
+        <ul class="footer-links">
+          <li><a href="#user_flow" class="footer-link" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('family');">Family & Matrimonial</a></li>
+          <li><a href="#user_flow" class="footer-link" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('property');">Property & Civil Disputes</a></li>
+          <li><a href="#user_flow" class="footer-link" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('criminal');">Criminal Defense & Bail</a></li>
+          <li><a href="#user_flow" class="footer-link" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('business');">Corporate & Contracts</a></li>
+          <li><a href="#user_flow" class="footer-link" onclick="App.navigateTo('user_flow'); UserFlow.setDomain('cybercrime');">Cybercrime & IT Law</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Prototype Verification</h4>
+        <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:0.75rem;">
+          Covering High Court Benches & District Courts in Indore, Bhopal, Mumbai, Pune, Nagpur, Jaipur, Jodhpur, and New Delhi.
+        </p>
+        <div style="font-size:0.8rem; color:#cbd5e1; line-height:1.5;">
+          <strong>Chamber Support (Demo):</strong><br>
+          consult@thelawyerlady.in<br>
+          High Court Square, Indore (M.P.)
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Disclaimers Box -->
+    <div class="container footer-disclaimer-box">
+      <strong>Statutory Disclaimer under Bar Council of India Rules:</strong> As per the rules of the Bar Council of India, advocates are prohibited from soliciting work or advertising. By visiting this website, the visitor acknowledges that they are seeking information of their own accord and there has been no advertisement, personal communication, solicitation, or inducement by The Lawyer Lady or its registered advocates. This prototype is an interactive client presentation demonstration and does not establish a lawyer-client relationship. All sample fees, payments, and appointments are simulated.
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 The Lawyer Lady. All rights reserved. Interactive Prototype Demonstration.</div>
+      <div style="display:flex; gap:1.25rem;">
+        <a href="#home" class="footer-link" onclick="alert('Demo Privacy Policy: Case briefs are encrypted and never sold to third-party telemarketers.'); return false;">Privacy Policy</a>
+        <a href="#home" class="footer-link" onclick="alert('Demo Terms of Service: Platform connection fee covers digital matching orchestration only.'); return false;">Terms of Service</a>
+        <a href="#home" class="footer-link" onclick="App.resetDemo(); return false;">Reset Prototype State</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts in dependency order -->
+  <script src="js/data.js"></script>
+  <script src="js/user-flow.js"></script>
+  <script src="js/lawyer-flow.js"></script>
+  <script src="js/knowledge.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
